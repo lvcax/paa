@@ -1,0 +1,13 @@
+10 execuções com array ordenado em ordem crescente: 
+1° execução: 0.00019025802612304688
+2° execução: 0.00017380714416503906
+3° execução: 0.0001690387725830078
+4° execução: 0.00016880035400390625
+5° execução: 0.00016832351684570312
+6° execução: 0.00016832351684570312
+7° execução: 0.00016736984252929688
+8° execução: 0.00017189979553222656
+9° execução: 0.0001678466796875
+10° execução: 0.0001678466796875
+Tamanho do array: 1000 | Média dos tempos: 0.00017135143280029298
+10 execuções com array em ordem decrescente: 
