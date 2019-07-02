@@ -1,42 +1,45 @@
 import numpy as np
 import time
 
-# To heapify subtree rooted at index i. 
-# n is size of heap 
-def heapify(array, n, i): 
-	largest = i # Initialize largest as root 
-	l = 2 * i + 1	 # left = 2*i + 1 
-	r = 2 * i + 2	 # right = 2*i + 2 
+# Python program for implementation of Quicksort Sort 
 
-	# See if left child of root exists and is 
-	# greater than root 
-	if (l < n and array[i] < array[l]): 
-		largest = l 
+# This function takes last element as pivot, places 
+# the pivot element at its correct position in sorted 
+# array, and places all smaller (smaller than pivot) 
+# to left of pivot and all greater elements to right 
+# of pivot 
+def partition(array, low, high): 
+	i = (low-1)		 # index of smaller element 
+	pivot = array[high]	 # pivot 
 
-	# See if right child of root exists and is 
-	# greater than root 
-	if (r < n and array[largest] < array[r]): 
-		largest = r 
+	for j in range(low, high): 
 
-	# Change root, if needed 
-	if (largest != i): 
-		array[i], array[largest] = array[largest], array[i] # swap 
+		# If current element is smaller than or 
+		# equal to pivot 
+		if (array[j] <= pivot): 
+			# increment index of smaller element 
+			i = i+1
+			array[i], array[j] = array[j], array[i] 
 
-		# Heapify the root. 
-		heapify(array, n, largest) 
+	array[i+1], array[high] = array[high], array[i+1] 
+	return i+1 
 
-# The main function to sort an array of given size 
-def heap_sort(array): 
-	n = len(array) 
+# The main function that implements QuickSort 
+# arr[] --> Array to be sorted, 
+# low --> Starting index, 
+# high --> Ending index 
 
-	# Build a maxheap. 
-	for i in range(n, -1, -1): 
-		heapify(array, n, i) 
+# Function to do Quick sort 
+def quick_sort(array, low, high): 
+	if (low < high): 
+		# pi is partitioning index, arr[p] is now 
+		# at right place 
+		pi = partition(array, low, high) 
 
-	# One by one extract elements 
-	for i in range(n-1, 0, -1): 
-		array[i], array[0] = array[0], array[i] # swap 
-		heapify(array, i, 0) 
+		# Separately sort elements before 
+		# partition and after partition 
+		quick_sort(array, low, pi-1) 
+		quick_sort(array, pi+1, high) 
 
 def factory_array(size):
     array = list()
@@ -52,7 +55,7 @@ executions = 10
 all_times = 0
 
 for item in sizes:
-    archive = open("heap_sort" + str(item) + ".txt", 'w')
+    archive = open("quick_sort" + str(item) + ".txt", 'w')
     crescent, decrescent, aleatory = factory_array(size=item)
 
 ############################################################################################################################
@@ -61,10 +64,10 @@ for item in sizes:
     print("Array ordenado em ordem crescente")
 
     for i in range(executions):
-        print("Heap sort " + str(i+1) + " de tamanho: " + str(item))
+        print("Quick sort " + str(i+1) + " de tamanho: " + str(item))
 
         init_time = time.time()
-        heap_sort(array=crescent)
+        quick_sort(array=crescent, low=crescent[0], high=crescent[len(crescent)-1])
         end_time = time.time()
         
         total = end_time - init_time
@@ -79,10 +82,10 @@ for item in sizes:
     print("Array ordenado em ordem decrescente")
 
     for j in range(executions):
-        print("Heap sort " + str(j+1) + " de tamanho: " + str(item))
+        print("Quick sort " + str(j+1) + " de tamanho: " + str(item))
 
         init_time = time.time()
-        heap_sort(array=decrescent)
+        quick_sort(array=decrescent, low=decrescent[0], high=decrescent[len(decrescent)-1])
         end_time = time.time()
         
         total = end_time - init_time
@@ -96,10 +99,10 @@ for item in sizes:
     archive.write("10 execuções com array desordenado: \n")
     print("Array desordenado")
     for k in range(executions):
-        print("Heap sort " + str(k+1) + " de tamanho: " + str(item))
+        print("Quick sort " + str(k+1) + " de tamanho: " + str(item))
         
         init_time = time.time()
-        heap_sort(array=aleatory)
+        quick_sort(array=aleatory, low=aleatory[0], high=aleatory[len(aleatory)-1])
         end_time = time.time()
         
         total = end_time - init_time

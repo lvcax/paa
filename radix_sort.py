@@ -61,7 +61,7 @@ all_times = 0
 
 for item in sizes:
     archive = open("radix_sort" + str(item) + ".txt", 'w')
-    crescent, decrescent, aleatory = factory_array(item)
+    crescent, decrescent, aleatory = factory_array(size=item)
 
 ############################################################################################################################
 
@@ -72,7 +72,7 @@ for item in sizes:
         print("Radix sort " + str(i+1) + " de tamanho: " + str(item))
 
         init_time = time.time()
-        radix_sort(crescent)
+        radix_sort(array=crescent)
         end_time = time.time()
         
         total = end_time - init_time
@@ -90,7 +90,7 @@ for item in sizes:
         print("Radix sort " + str(j+1) + " de tamanho: " + str(item))
 
         init_time = time.time()
-        radix_sort(decrescent)
+        radix_sort(array=decrescent)
         end_time = time.time()
         
         total = end_time - init_time
@@ -107,7 +107,7 @@ for item in sizes:
         print("Radix sort " + str(k+1) + " de tamanho: " + str(item))
         
         init_time = time.time()
-        radix_sort(aleatory)
+        radix_sort(array=aleatory)
         end_time = time.time()
         
         total = end_time - init_time

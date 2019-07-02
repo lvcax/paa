@@ -21,7 +21,7 @@ all_times = 0
 
 for item in sizes:
     archive = open("bogo_sort" + str(item) + ".txt", 'w')
-    crescent, decrescent, aleatory = factory_array(item)
+    crescent, decrescent, aleatory = factory_array(szie=item)
 
 ############################################################################################################################
 
@@ -32,7 +32,7 @@ for item in sizes:
         print("Bogo sort " + str(i+1) + " de tamanho: " + str(item))
 
         init_time = time.time()
-        bogo_sort(crescent)
+        bogo_sort(array=crescent)
         end_time = time.time()
         
         total = end_time - init_time
@@ -50,7 +50,7 @@ for item in sizes:
         print("Bogo sort " + str(j+1) + " de tamanho: " + str(item))
 
         init_time = time.time()
-        bogo_sort(decrescent)
+        bogo_sort(array=decrescent)
         end_time = time.time()
         
         total = end_time - init_time
@@ -67,7 +67,7 @@ for item in sizes:
         print("Bogo sort " + str(k+1) + " de tamanho: " + str(item))
         
         init_time = time.time()
-        bogo_sort(aleatory)
+        bogo_sort(array=aleatory)
         end_time = time.time()
         
         total = end_time - init_time
