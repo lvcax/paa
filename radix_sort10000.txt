@@ -1,0 +1,38 @@
+10 execuções com array ordenado em ordem crescente: 
+1° execução: 4.914263010025024
+2° execução: 4.890003442764282
+3° execução: 4.896067142486572
+4° execução: 4.8977437019348145
+5° execução: 4.896369934082031
+6° execução: 4.890014410018921
+7° execução: 4.87764048576355
+8° execução: 4.880818128585815
+9° execução: 4.934688329696655
+10° execução: 4.872598648071289
+Tamanho do array: 10000 | Média dos tempos: 6.361712241172791
+
+10 execuções com array em ordem decrescente: 
+1° execução: 4.8708555698394775
+2° execução: 4.879086017608643
+3° execução: 4.893146991729736
+4° execução: 4.873762130737305
+5° execução: 4.884533405303955
+6° execução: 4.891010522842407
+7° execução: 4.875659465789795
+8° execução: 4.876314640045166
+9° execução: 4.892725229263306
+10° execução: 4.883407354354858
+Tamanho do array: 10000 | Média dos tempos: 11.243762373924255
+
+10 execuções com array desordenado: 
+1° execução: 4.9368510246276855
+2° execução: 4.939554929733276
+3° execução: 4.899374961853027
+4° execução: 4.883016109466553
+5° execução: 4.893935680389404
+6° execução: 4.882776498794556
+7° execução: 4.920640230178833
+8° execução: 4.9034600257873535
+9° execução: 4.899585247039795
+10° execução: 4.896123170852661
+Tamanho do array: 10000 | Média dos tempos: 16.14929416179657

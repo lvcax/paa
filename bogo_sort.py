@@ -2,12 +2,6 @@ import numpy as np
 import time
 from random import shuffle
 
-'''
-begin = time.time()
-end = time.time()
-total = end - begin
-'''
-
 def bogo_sort(array):
     while not all(x <= y for x, y in zip(array, array[1:])):
         shuffle(array)
@@ -48,7 +42,7 @@ for item in sizes:
     archive.write("Tamanho do array: " + str(item) + " | Média dos tempos: " + str(all_times / executions) + "\n")
 
 ############################################################################################################################
-
+'''
     archive.write("10 execuções com array em ordem decrescente: \n")
     print("Array ordenado em ordem decrescente")
 
@@ -70,7 +64,7 @@ for item in sizes:
     archive.write("10 execuções com array desordenado: \n")
     print("Array desordenado")
     for k in range(executions):
-        print("Bogo sort " + str(i+1) + " de tamanho: " + str(item))
+        print("Bogo sort " + str(k+1) + " de tamanho: " + str(item))
         
         init_time = time.time()
         bogo_sort(aleatory)
@@ -82,3 +76,4 @@ for item in sizes:
     
     archive.write("Tamanho do array: " + str(item) + " | Média dos tempos: " + str(all_times / executions) + "\n")
 ############################################################################################################################
+'''

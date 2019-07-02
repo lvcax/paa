@@ -107,7 +107,7 @@ for item in sizes:
     archive.write("10 execuções com array desordenado: \n")
     print("Array desordenado")
     for k in range(executions):
-        print("Heap sort " + str(i+1) + " de tamanho: " + str(item))
+        print("Heap sort " + str(k+1) + " de tamanho: " + str(item))
         
         init_time = time.time()
         heap_sort(aleatory)
