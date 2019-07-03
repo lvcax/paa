@@ -35,11 +35,7 @@ def counting_sort(array, exp1):
 
  
 def radix_sort(array):  
-	max1 = max(array) # Find the maximum number to know number of digits
-
-	# Do counting sort for every digit. Note that instead 
-	# of passing digit number, exp is passed. exp is 10^i 
-	# where i is current digit number 
+	max1 = max(array)
 	exp = 1
 	while max1/exp > 0: 
 		counting_sort(array,exp) 

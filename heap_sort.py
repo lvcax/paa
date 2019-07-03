@@ -1,41 +1,30 @@
 import numpy as np
 import time
-
-# To heapify subtree rooted at index i. 
-# n is size of heap 
+ 
 def heapify(array, n, i): 
-	largest = i # Initialize largest as root 
-	l = 2 * i + 1	 # left = 2*i + 1 
-	r = 2 * i + 2	 # right = 2*i + 2 
+	largest = i 
+	left = 2 * i + 1	  
+	right = 2 * i + 2	  
 
-	# See if left child of root exists and is 
-	# greater than root 
-	if (l < n and array[i] < array[l]): 
-		largest = l 
+	if (left < n and array[i] < array[left]): 
+		largest = left 
 
-	# See if right child of root exists and is 
-	# greater than root 
-	if (r < n and array[largest] < array[r]): 
-		largest = r 
+	if (right < n and array[largest] < array[right]): 
+		largest = right 
 
-	# Change root, if needed 
 	if (largest != i): 
-		array[i], array[largest] = array[largest], array[i] # swap 
-
-		# Heapify the root. 
+		array[i], array[largest] = array[largest], array[i]
+ 
 		heapify(array, n, largest) 
 
-# The main function to sort an array of given size 
 def heap_sort(array): 
 	n = len(array) 
 
-	# Build a maxheap. 
 	for i in range(n, -1, -1): 
 		heapify(array, n, i) 
 
-	# One by one extract elements 
 	for i in range(n-1, 0, -1): 
-		array[i], array[0] = array[0], array[i] # swap 
+		array[i], array[0] = array[0], array[i]
 		heapify(array, i, 0) 
 
 def factory_array(size):
@@ -54,8 +43,6 @@ all_times = 0
 for item in sizes:
     archive = open("heap_sort" + str(item) + ".txt", 'w')
     crescent, decrescent, aleatory = factory_array(size=item)
-
-############################################################################################################################
 
     archive.write("10 execuções com array ordenado em ordem crescente: \n")
     print("Array ordenado em ordem crescente")

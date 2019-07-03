@@ -21,7 +21,7 @@ all_times = 0
 
 for item in sizes:
     archive = open("bogo_sort" + str(item) + ".txt", 'w')
-    crescent, decrescent, aleatory = factory_array(szie=item)
+    crescent, decrescent, aleatory = factory_array(size=item)
 
 ############################################################################################################################
 
